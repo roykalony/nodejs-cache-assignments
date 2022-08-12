@@ -1,11 +1,14 @@
 export class ListNode {
-  constructor (value) {
+  constructor (key, value) {
+    this.key = key
     this.value = value
     this.nextNode = null
     this.prevNode = null
   }
 }
-
+/**
+ *
+ */
 export class DoublyLinkedList {
   constructor () {
     this.length = 0
@@ -34,7 +37,7 @@ export class DoublyLinkedList {
     }
 
     this.length++
-    this.tail.nextNode = node
+    this.tail?.nextNode = node
     node.prevNode = this.tail
     this.tail = node
   }
