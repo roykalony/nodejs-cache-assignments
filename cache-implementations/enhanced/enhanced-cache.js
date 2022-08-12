@@ -1,7 +1,13 @@
 import { ListNode, DoublyLinkedList } from './linked-list'
 
+/**
+ * Enhanced cache implementation with capacity
+ * Based on LRU eviction policy,
+ * Implemented by regular JS Object and doubly linked list for capacity tracking
+ * (List Head = LRU, List Tail = MRU)
+ */
 export class EnhancedCache {
-  /**
+    /**
      * @param {number} maxItems
      */
   constructor (maxItems) {
@@ -22,12 +28,8 @@ export class EnhancedCache {
     return this.getSize() === this.maxItems
   }
 
-  getNode (key) {
-
-  }
-
   /**
-     *
+     * Advance given node/item to be mru (end of the list)
      * @param {ListNode} node
      */
   setMostRecentlyUsed(node) {
